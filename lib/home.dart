@@ -1,4 +1,5 @@
 import 'package:chatbot/services.dart';
+import 'package:chatbot/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
@@ -114,7 +115,6 @@ class _HomeState extends State<Home> {
         color: const Color(0xFF9D4EDD),
       ),
 
-      
       code: GoogleFonts.firaCode(
         fontSize: 14,
         color: const Color(0xFF06D6A0),
@@ -179,7 +179,14 @@ class _HomeState extends State<Home> {
                 width: 37,
                 height: 37,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SettingsScreen(),
+                      ),
+                    );
+                  },
                   icon: const Icon(Icons.settings),
                   color: const Color(0xFF9D4EDD),
                   iconSize: 20,
